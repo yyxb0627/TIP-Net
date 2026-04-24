@@ -21,7 +21,7 @@ cd TIP-Net
 pip install -r requirements.txt
 (Optional) Install facenet-pytorch if you need face cropping during preprocessing.
 
-📁 Data Preparation
+## 📁 Data Preparation
 Please organize your raw videos (e.g., ForgeryNet, FF++, Celeb-DF) into real and fake folders as follows:
 
 Plaintext
@@ -34,12 +34,11 @@ raw_dataset/
     └── id00004.mp4
 Extract frames from the raw videos using the provided preprocessing script:
 
-Bash
 python scripts/preprocess.py \
     --data_root  ./raw_dataset \
     --frames_dir ./frames \
     --face_crop
-🚀 Quick Start
+## 🚀 Quick Start
 Training
 To train TIP-Net from scratch, run the following command. The model will automatically build the memory bank and update prototypes during training.
 
@@ -53,7 +52,6 @@ Note: If you encounter Out-Of-Memory (OOM) issues, consider decreasing the batch
 Testing & Evaluation
 To evaluate the trained model and get video-level/snippet-level metrics:
 
-Bash
 python test.py \
     --frames_dir ./frames \
     --checkpoint ./checkpoints/best_model.pth \
